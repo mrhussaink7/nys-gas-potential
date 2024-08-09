@@ -5,3 +5,4 @@ merged_oil_wells.csv
 
 # Dump Files
 .DS_Store
+.ipynb_checkpoints
