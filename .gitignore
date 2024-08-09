@@ -1,0 +1,7 @@
+# Files Git - Not Tracking
+
+# Data
+merged_oil_wells.csv
+
+# Dump Files
+.DS_Store
