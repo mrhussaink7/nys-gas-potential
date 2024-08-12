@@ -1,0 +1,8 @@
+# Files Git - Not Tracking
+
+# Data
+data/merged_oilgas_wells.csv
+
+# Dump Files
+.DS_Store
+.ipynb_checkpoints
