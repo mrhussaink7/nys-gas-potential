@@ -3,6 +3,10 @@
 # Data
 data/merged_oilgas_prodwells.csv
 
+# Model
+model/
+model/base_model.pkl
+
 # Dump Files
 .DS_Store
 .ipynb_checkpoints
