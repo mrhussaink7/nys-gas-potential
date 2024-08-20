@@ -5,7 +5,6 @@ data/merged_oilgas_prodwells.csv
 
 # Model
 model/
-model/base_model.pkl
 
 # Dump Files
 .DS_Store
