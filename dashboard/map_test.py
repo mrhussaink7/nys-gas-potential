@@ -92,15 +92,18 @@ def update_map(layers):
         margin={"r": 0, "t": 0, "l": 0, "b": 0}
     )
 
+    # Reduce data to 10% to test performance
+    grid_data_sampled = grid_data.sample(frac=0.1)
+
     if 'kriging' in layers:
         density_layer = go.Densitymapbox(
-            lat=grid_data['lat'],  # Replace with your grid latitude column
-            lon=grid_data['lon'],  # Replace with your grid longitude column
-            z=grid_data['predicted_value'],  # The value to interpolate
-            radius=10,  # Adjust this for more or less smoothing
+            lat=grid_data_sampled['lat'],
+            lon=grid_data_sampled['lon'],
+            z=grid_data_sampled['predicted_value'],
+            radius=20,  # Increase radius to reduce processing
             colorscale="plasma",
-            zmin=grid_data['predicted_value'].min(),
-            zmax=grid_data['predicted_value'].max(),
+            zmin=grid_data_sampled['predicted_value'].min(),
+            zmax=grid_data_sampled['predicted_value'].max(),
             opacity=0.6,
             showscale=True,
             colorbar=dict(title="Gas (MCF)")
@@ -109,13 +112,13 @@ def update_map(layers):
 
     if 'error' in layers:
         error_layer = go.Densitymapbox(
-            lat=grid_data['lat'],  # Replace with your grid latitude column
-            lon=grid_data['lon'],  # Replace with your grid longitude column
-            z=grid_data['error'],  # The error values
+            lat=grid_data_sampled['lat'],  # Replace with your grid latitude column
+            lon=grid_data_sampled['lon'],  # Replace with your grid longitude column
+            z=grid_data_sampled['error'],  # The error values
             radius=10,  # Adjust the radius as needed
             colorscale="YlGn_r",
-            zmin=grid_data['error'].min(),
-            zmax=grid_data['error'].max(),
+            zmin=grid_data_sampled['error'].min(),
+            zmax=grid_data_sampled['error'].max(),
             opacity=0.6,
             showscale=True,
             colorbar=dict(title="Variance")
