@@ -1,7 +1,7 @@
 # Files Git - Not Tracking
 
 # Data
-data/merged_oilgas_prodwells.csv
+data/data_source/merged_oilgas_prodwells.csv
 
 # Model
 model/

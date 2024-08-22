@@ -92,7 +92,7 @@ app.layout = dbc.Container([
     dbc.Row([
         dbc.Col([
             html.Div([
-                dcc.Graph(id='selected-plot', style={'height': '500px', 'width': '100%'}),
+                dcc.Graph(id='selected-plot', style={'height': '300px', 'width': '100%'}),
                 # Hovering dropdown card
                 html.Div([
                     dbc.Card([
