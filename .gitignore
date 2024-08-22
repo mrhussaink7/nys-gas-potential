@@ -2,6 +2,7 @@
 
 # Data
 data/data_source/merged_oilgas_prodwells.csv
+data/kriging_grid_data.parquet
 
 # Model
 model/
